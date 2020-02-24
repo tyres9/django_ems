@@ -1,0 +1,46 @@
+{% extends "employee/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="text-center">
+            <h1 class="p-5">{{ object.lastname }}, {{ object.firstname}}</h1>
+        </div>
+       
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <td>Address</th>                
+                <td>{{ object.address }}</th>
+            </tr>
+            <tr>
+                <td>Contact</th>                
+                <td>{{ object.cell_number }}</th>
+            </tr>
+            <tr>
+                <td>Company</th>                
+                <td>{{ object.dispatch_company}}</th>
+            </tr>
+            <tr>
+                <td>Position</th>                
+                <td>{{ object.position}}</th>
+            </tr>
+            <tr>
+                <td>Date Started</th>                
+                <td>{{ object.date_started}}</th>
+            </tr>
+        </tbody>
+        </table>
+    </div>   
+</body>
+</html>
+
+{% endblock content %}

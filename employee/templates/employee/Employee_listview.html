@@ -1,0 +1,39 @@
+{% extends "employee/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="py-5 text-center">
+        <h1>Employee List</h1>
+    </div>
+    <div>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>                
+                <th scope="col">Contact</th>
+                <th scope="col">Company</th>
+            </tr>
+            </thead>
+       
+        <tbody>
+            {% for worker in EmployeeList %}
+            <tr>  
+                <th scope="row"><a href="{% url 'EmployeeDetail' worker.pk %}">{{ worker.lastname }}, {{ worker.firstname}} </a></th>
+                <td>{{ worker.cell_number }}</td>
+                <td>{{ worker.dispatch_company }}</td>    
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>   
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "employee/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form|crispy }}
+        </div>
+        <div class="p-0.5">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    <div>
+        <div class="p-0.5"><button type="submit"><a href="{% url 'EmployeeList' %}"> List</a></button></div>
+    </div>
+</body>
+</html>
+{% endblock content %}

@@ -1,17 +1,11 @@
 {% extends "employee/base.html" %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
 <body>
     <div>
         <div class="text-center">
-            <h1 class="p-5">{{ object.lastname }}, {{ object.firstname}}</h1>
+            <h1 class="p-5">{{ object.last_name }}, {{ object.first_name}}</h1>
         </div>
        
     </div>
@@ -40,6 +34,10 @@
         </tbody>
         </table>
     </div>   
+    <div>
+        <div class="p-0.5"><button type="submit"><a href="{% url 'EmployeeUpdate' object.pk %}"> Update</a></button></div><br>
+        <div class="p-0.5"><button type="submit"><a href="{% url 'EmployeeList' %}"> List</a></button></div>
+    </div>
 </body>
 </html>
 
